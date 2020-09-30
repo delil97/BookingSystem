@@ -19,6 +19,8 @@ namespace BookingSystem
 
         private static bool ShowMenu()
         {
+            ShowMenuOptions();
+
             string userInput = Console.ReadLine();
             int parsedInput;
             bool isInt = int.TryParse(userInput, out parsedInput);
@@ -29,8 +31,6 @@ namespace BookingSystem
                 userInput = Console.ReadLine();
                 isInt = int.TryParse(userInput, out parsedInput);
             }
-
-            ShowMenuOptions();
 
             switch (parsedInput)
             {
