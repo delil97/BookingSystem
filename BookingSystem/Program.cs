@@ -29,7 +29,9 @@ namespace BookingSystem
                 userInput = Console.ReadLine();
                 isInt = int.TryParse(userInput, out parsedInput);
             }
-     
+
+            ShowMenuOptions();
+
             switch (parsedInput)
             {
                 case 1:
@@ -41,13 +43,28 @@ namespace BookingSystem
                 case 3:
                     ChangeBooking();
                     break;
-
+                case 4:
+                    DeleteBooking();
+                    break;
                 default:
-                    Console.WriteLine("Choose again");
+                    return false;
                     break;
             }
 
             return false;
+        }
+
+        private static void DeleteBooking()
+        {
+            Console.WriteLine("Delete booking");
+        }
+
+        private static void ShowMenuOptions()
+        {
+            Console.WriteLine("1. Make booking");
+            Console.WriteLine("2. Cancel booking");
+            Console.WriteLine("3. Change Booking");
+            Console.WriteLine("4. Delete Booking");
         }
 
         private static void ChangeBooking()
